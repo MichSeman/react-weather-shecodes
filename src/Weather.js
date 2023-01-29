@@ -25,11 +25,10 @@ function Weather() {
         <li>Mostly Cloudy</li>
     </ul>
     <div className="row mt-3">
-        <div className="col-6">
+        <div className="col-3">
             <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" 
             alt="mostly cloudy"
             className="float-left" />
-           
             <span className="temperature">6 </span>
             <span className="unit">°C</span>
         </div>
