@@ -8,7 +8,17 @@ function Weather() {
         <li>Wednesday 07:00</li>
         <li>Mostly Cloudy</li>
     </ul>
-    Hello from Weather Station
+    <div className="row">
+        <div className="col-6">
+            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="mostly cloudy">
+            </img>
+            6 degrees
+        </div>
+        <div className="col-6">
+
+        </div>
+    </div>
+   
     </div>
 }
 
