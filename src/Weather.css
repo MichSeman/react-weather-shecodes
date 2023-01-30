@@ -10,7 +10,7 @@
 
 .Weather h1 {
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 45px;
     color: azure;
     display: block;
     font-size: 45px;
@@ -39,6 +39,8 @@
 
 .Weather form {
     margin: 20x;
+    padding-top: 10px;
+    padding-left: 8px;
 } 
 
 .Weather .temperature {
