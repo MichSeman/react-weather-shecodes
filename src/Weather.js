@@ -3,7 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 
 
-function Weather() {
+function Weather(props) {
     const [weatherData, setWeatherData] = useState({ready:false});
     function handleResponse(response) {
 
@@ -68,13 +68,10 @@ if (weatherData.ready) {
 
 } else {
     const apiKey = "11e35b685db379570807b7fb5ef18ce6";
-    let city = "Athens";
-    let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
 }
-
-
-   }
+}
 export default Weather;
