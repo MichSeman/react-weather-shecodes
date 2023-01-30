@@ -1,8 +1,29 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import "./Weather.css";
+import axios from "axios";
+
 
 function Weather() {
-    return <div className="Weather"> 
+    const [weatherData, setWeatherData] = useState({ready:false});
+    function handleResponse(response) {
+
+        setWeatherData({
+            ready: true,
+            temperature: response.data.main.temp,
+            date: "Wednesday, 07:00",
+            wind: response.data.wind.speed,
+            city: response.data.name,
+            humidity: response.data.main.humidity,
+            description: response.data.weather[0].description,
+            iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+
+        })
+        
+        }
+
+if (weatherData.ready) {
+  return (
+    <div className="Weather"> 
     <form>
         <div className="row">
             <div className="col-9">
@@ -19,32 +40,41 @@ function Weather() {
             </div>
         </div>
     </form>
-    <h1>Athens</h1>
+    <h1>{weatherData.city}</h1>
     <ul>
-        <li>Wednesday 07:00</li>
-        <li>Mostly Cloudy</li>
+        <li>{weatherData.date}</li>
+        <li className="text-capitalize">{weatherData.description}</li>
     </ul>
     <div className="row mt-3">
         <div className="col-3">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" 
-            alt="mostly cloudy"
+            <img src={weatherData.iconUrl} 
+            alt={weatherData.description}
             className="float-left" />
-            <span className="temperature">6 </span>
-            <span className="unit">°C</span>
+            <span className="temperature">{Math.round(weatherData.temperature)} </span>
+            <span className="unit">°F</span>
         </div>
         <div className="row">
         <div className="col-6">
             <ul className="weather-extras">
                 <li>percipitation</li>
-                <li>humidity </li>
-                 <li>wind</li>
+                <li>Humidity: {weatherData.humidity}</li>
+                 <li>wind: {weatherData.wind}</li>
             </ul>
         </div>
         </div>
     </div>
-   
-    </div>
+</div>
+ );
+
+} else {
+    const apiKey = "11e35b685db379570807b7fb5ef18ce6";
+    let city = "Athens";
+    let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
 }
 
 
+   }
 export default Weather;
