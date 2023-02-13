@@ -15,7 +15,7 @@ function App() {
           Michelle Seman
         </a> 
           {" "} and is
-        <a href='https://github.com/MichSeman/react-weather-shecodes.git' target="_blank" rel="noreferrer"> open-sources on GitHub</a>
+        <a href='https://github.com/MichSeman/react-weather-shecodes.git' target="_blank" rel="noreferrer"> open-sourced on GitHub</a>, hosted on Netlify
       </footer>
       </div>
     </div>
