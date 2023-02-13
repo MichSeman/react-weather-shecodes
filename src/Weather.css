@@ -1,6 +1,6 @@
 .Weather {
-    background-color:#2c6e49;
-    color: #ffc9b9;
+    background-color:#faf5e4;
+    color: #2c786c;
     border: 2px solid;
     font-family: 'Pacifico', cursive;
     margin: 30px auto;
@@ -11,7 +11,7 @@
 .Weather h1 {
     padding-top: 15px;
     padding-bottom: 45px;
-    color: azure;
+    color:#004445;
     display: block;
     font-size: 45px;
     font-weight: 100;
@@ -53,6 +53,7 @@
     height: 64px;
     margin-right: 10px;
     display: inline-block;
+    
 } 
 
 .Weather .unit {
@@ -61,4 +62,8 @@
     line-height: 1;
     top: -32px;
     
+}
+
+.Weather .btn {
+    background-color: #f8b400 !important;
 }
